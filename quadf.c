@@ -19,9 +19,15 @@ double getRealInput(char *message) {
 	return response;
 }
 
+//This function calculates the discriminant given A, B, C
+double discriminant(double A, double B, double C) {
+	return pow(B,2) - (4 * A * C);
+}
+
 int main(int argc, char **argv)
 {
 	double A = 0.0, B = 0.0, C = 0.0;
+	double discr = 0.0;
 	
 	printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
 	
@@ -29,6 +35,10 @@ int main(int argc, char **argv)
 	B = getRealInput("Input B: ");
 	C = getRealInput("Input C: ");
 	
-	printf("A: %.12lf\nB: %.12lf\nC: %.12lf\n", A, B, C);
+	printf("\nA: %.12lf\nB: %.12lf\nC: %.12lf\n", A, B, C);
+	
+	discr = discriminant(A, B, C);
+	printf("\nThe discriminant is: %.12lf\n", discr);
+	
 	return 0;
 }
