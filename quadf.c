@@ -19,7 +19,6 @@ double getRealInput(char *message) {
 	return response;
 }
 
-//This is a comment to test Codelite's git system
 int main(int argc, char **argv)
 {
 	double A = 0.0, B = 0.0, C = 0.0;
