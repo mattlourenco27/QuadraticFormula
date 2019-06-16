@@ -60,9 +60,10 @@ int main(int argc, char **argv) {
 	
 	A = getRealInput("Input A: ");
 
-	if (A == 0.0) {
+	if (A == 0) {
 		printf("Error: Function is not quadratic;\nExiting...\n");
-		return 0;
+		
+		
 	}
 
 	B = getRealInput("Input B: ");
