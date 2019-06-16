@@ -59,6 +59,12 @@ int main(int argc, char **argv) {
 	printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
 	
 	A = getRealInput("Input A: ");
+
+	if (A == 0.0) {
+		printf("Error: Function is not quadratic;\nExiting...\n");
+		return 0;
+	}
+
 	B = getRealInput("Input B: ");
 	C = getRealInput("Input C: ");
 	
