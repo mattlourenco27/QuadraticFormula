@@ -53,6 +53,9 @@ int main(int argc, char **argv) {
 	
 	unsigned const char PLUS_OR_MINUS= 241;
 	
+	//Switch stout to unbuffered mode to fix scan before inputs
+	setvbuf(stdout, 0, _IONBF, 0);
+
 	printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
 	
 	A = getRealInput("Input A: ");
