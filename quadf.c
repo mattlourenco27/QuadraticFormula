@@ -47,6 +47,14 @@ double imaginarySolutions(double A, double B, double C, double *img) {
 	return -B / (2 * A); 
 }
 
+//This funtion runs the closing procedure
+void close(void) {
+	printf("Press ENTER key to Continue\n");  
+	getchar(); //Existing Enter key from previous inputs
+	getchar();
+	return;
+}
+
 int main(int argc, char **argv) {
 	double A = 0.0, B = 0.0, C = 0.0;
 	double discr = 0.0;
@@ -59,6 +67,12 @@ int main(int argc, char **argv) {
 	printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
 	
 	A = getRealInput("Input A: ");
+
+	if (A == 0) {
+		close();
+		return 0;
+	}
+
 	B = getRealInput("Input B: ");
 	C = getRealInput("Input C: ");
 	
@@ -87,5 +101,6 @@ int main(int argc, char **argv) {
 			   realSol, imgSol, realSol, PLUS_OR_MINUS, imgSol);
 	}
 	
+	close();
 	return 0;
 }
