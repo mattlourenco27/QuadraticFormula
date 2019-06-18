@@ -50,7 +50,7 @@ double imaginarySolutions(double A, double B, double C, double *img) {
 
 //This funtion runs the closing procedure
 void close(void) {
-	printf("Press ENTER key to Continue\n");
+	printf("\nPress ENTER key to Continue\n");
 	getchar();
 	return;
 }
