@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <string.h>
 
 //This function displays a message then recieves the respose
 double getRealInput(char *message) {
@@ -55,6 +56,16 @@ void close(void) {
 	return;
 }
 
+//This function is a test function that lists out argv and argc for testing
+void listOut(int argc, char **argv) {
+	printf("argc -> %d\n\n", argc);
+
+	for(int i = 0; i < argc; i++) {
+		printf("argv[%d] -> %s\n", i, *argv);
+		argv++;
+	}
+}
+
 int main(int argc, char **argv) {
 	double A = 0.0, B = 0.0, C = 0.0;
 	double discr = 0.0;
@@ -63,6 +74,8 @@ int main(int argc, char **argv) {
 	
 	//Switch stout to unbuffered mode to fix scan before inputs
 	setvbuf(stdout, 0, _IONBF, 0);
+
+	listOut(argc, argv);
 
 	printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
 	
