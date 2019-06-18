@@ -50,12 +50,12 @@ double imaginarySolutions(double A, double B, double C, double *img) {
 
 //This funtion runs the closing procedure
 void close(void) {
-	printf("Press ENTER key to Continue\n");  
-	getchar(); //Existing Enter key from previous inputs
+	printf("Press ENTER key to Continue\n");
 	getchar();
 	return;
 }
 
+/*
 //This function is a test function that lists out argv and argc for testing
 void listOut(int argc, char **argv) {
 	printf("argc -> %d\n\n", argc);
@@ -65,6 +65,7 @@ void listOut(int argc, char **argv) {
 		argv++;
 	}
 }
+*/
 
 int main(int argc, char **argv) {
 	double A = 0.0, B = 0.0, C = 0.0;
@@ -75,20 +76,36 @@ int main(int argc, char **argv) {
 	//Switch stout to unbuffered mode to fix scan before inputs
 	setvbuf(stdout, 0, _IONBF, 0);
 
-	listOut(argc, argv);
+	//Listout the arguments for testing
+	//listOut(argc, argv);
 
-	printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
+	if (argc > 1) {
+		A = atof(argv[1]);
+
+		if (A == 0) {
+			printf("Error: Function is not quadratic;\n");
+			close();
+			return 0;
+		}
+		B = atof(argv[2]);
+		C = atof(argv[3]);
+
+	} else {
+		printf("Let the form of the quadratic function be: Ax^2 + Bx + C\n\n");
 	
-	A = getRealInput("Input A: ");
+		A = getRealInput("Input A: ");
 
-	if (A == 0) {
-		printf("Error: Function is not quadratic;\n");
-		close();
-		return 0;
+		if (A == 0) {
+			printf("Error: Function is not quadratic;\n");
+			close();
+			return 0;
+		}
+
+		B = getRealInput("Input B: ");
+		C = getRealInput("Input C: ");
+
+		getchar(); //Removes existing Enter key from previous inputs
 	}
-
-	B = getRealInput("Input B: ");
-	C = getRealInput("Input C: ");
 	
 	//printf("\nA: %.12lf\nB: %.12lf\nC: %.12lf\n", A, B, C);
 	
