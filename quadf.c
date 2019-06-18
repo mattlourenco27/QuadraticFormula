@@ -128,8 +128,7 @@ int main(int argc, char **argv) {
 		double imgSol = 0.0;
 		double realSol = imaginarySolutions(A, B, C, &imgSol);
 		
-		printf("\nReal Component: %.12lf\nImaginary Component: %.12lf\n\n%.12lf %c i%.12lf\n",
-			   realSol, imgSol, realSol, PLUS_OR_MINUS, imgSol);
+		printf("\n%.12lf +- i%.12lf\n", realSol, imgSol);
 	}
 	
 	close();
