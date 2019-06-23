@@ -6,4 +6,4 @@ Define Ax^2 + Bx + C
 Compile and run the program then input A, B, and C.
 
 Alternatively input A, B, and C when running the program from the command line.
-*Ex: ./quadf.exe 1 0 -4
+Ex: ./quadf.exe 1 0 -4
