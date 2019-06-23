@@ -43,7 +43,7 @@ static double imaginarySolutions(double A, double B, double C, double *img) {
 }
 
 //This function calculates and prints the quadratic formula
-void quadf(double A, double B, double C) {
+void pquadf(double A, double B, double C) {
 	double discr = 0.0;
 	
 	unsigned const char PLUS_OR_MINUS= 241;
@@ -70,5 +70,37 @@ void quadf(double A, double B, double C) {
 		double realSol = imaginarySolutions(A, B, C, &imgSol);
 		
 		printf("\n%.12lf +- i%.12lf\n", realSol, imgSol);
+	}
+}
+
+//This function calculates the quadratic formulaand returns the solutions
+// as sol1 and sol2. if the solutions are imaginary then sol1 is the real
+// component and sol2 is the imaginary component
+void quadf(double A, double B, double C,
+		   double *sol1, double *sol2, bool *imag) {
+	double discr = 0.0;
+	
+	//printf("\nA: %.12lf\nB: %.12lf\nC: %.12lf\n", A, B, C);
+	
+	discr = discriminant(A, B, C);
+	//printf("\nThe discriminant is: %.12lf\n", discr);
+	
+	if (discr > 0) {
+		
+		*imag = false;
+		*sol1 = twoSolution(A, B, C, true);
+		*sol2 = twoSolution(A, B, C, false);
+
+	} else if (discr == 0) {
+		
+		*imag = false;
+		*sol1 = oneSolution(A, B);
+		*sol2 = *sol1;
+
+	} else {
+		
+		*imag = true;
+		*sol1 = imaginarySolutions(A, B, C, sol2);
+		
 	}
 }
