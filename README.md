@@ -1,5 +1,5 @@
 # QuadraticFormula
-Header file 'quadf.h' that can be imported
+Header file 'quadf.h' that can be included
 Calculates the solutions to the quadratic formula given the coefficients of a quadratic function as inputs
 
 Define the coefficients Ax^2 + Bx + C
